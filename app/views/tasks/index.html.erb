@@ -1,7 +1,15 @@
+<div class="main">
+
 <h1>HELLO TASK</h1>
+<%# mostrando os tasks %>
 
 <ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.title, task_path(list) %></li>
+  <% @tasks.each do |task| %>
+    <li> <i class=" fa-solid fa-list"> </i> <%= link_to task.title, task_path(task) %></li>
     <% end %>
 </ul>
+
+  <br>
+
+  <strong ><p><%= link_to "Create A New Task", tasks_new_path, class:"btn btn-primary "%> <i class="fa-solid fa-house-crack"></i></p> </strong>
+</div>

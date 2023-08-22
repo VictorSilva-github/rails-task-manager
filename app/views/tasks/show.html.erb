@@ -1,2 +1,17 @@
-<h2><%= @list.title %></h2>
-<p><%= @list.details %></p>
+<div class="main">
+<h2><%= @task.title %></h2>
+<p></p>
+<p><strong>Title:</strong> <%= @task.title %> </p>
+<p><strong>details:</strong> <%= @task.details %> </p>
+<p><strong>Completed:</strong> <%= @task.completed %> </p>
+
+<br>
+<p><%= link_to 'Back To Tasks Main Page', tasks_path, class:"btn btn-primary "%> <i class=" fa-solid fa-house-crack"></i> </p> |
+<strong><%= link_to 'update task ', edit_task_path(@task), class:"btn btn-warning " %> <i class=" fa-regular fa-pen-to-square"></i></strong> |
+
+<strong><%= link_to 'delete ', task_path(@task), class:"btn btn-danger ",
+data: { turbo_method: :delete, turbo_confirm: 'Deletar mesmo?' } %> <i class="fa-solid fa-trash"></i></strong>
+
+</div>
+
+ <%# #Para mostrar o data %>

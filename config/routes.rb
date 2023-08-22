@@ -4,31 +4,38 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   # verb 'path', to: 'controller#action'
-
+  # CRUD
+  root 'tasks#index'
+  
+ # see all tasks
   get 'tasks', to: 'tasks#index'
 
-  # see one task
+  # # CREATE a restaurant
+  get 'tasks/new', to: 'tasks#new'
+  post 'tasks', to: 'tasks#create'
+
+  # see one task READ
   get 'tasks/:id', to: 'tasks#show', as: 'task'
 
+  # UPDATE
+  # update a task
+  get 'tasks/:id/edit', to: 'tasks#edit', as: :edit_task
+  patch 'tasks/:id', to: 'tasks#update'
+
+  # DELETE
+  # delete a restaurant
+  delete 'tasks/:id', to: 'tasks#destroy'
+
+  # See all restaurants
+  # See details about one restaurant
+  # Create a restaurant
+  # Update a restaurant
+  # Destroy a restaurant
 
 
 
 
-  # # create a restaurant
-  # get 'restaurants/new', to: 'restaurants#new'
-  # post 'restaurants', to: 'restaurants#create'
 
-  # # see one restaurant
-  # get 'restaurants/:id', to: 'restaurants#show', as: :restaurant
 
-  # # update a restaurant
-  # get 'restaurants/:id/edit', to: 'restaurants#edit', as: :edit_restaurant
-  # patch 'restaurants/:id', to: 'restaurants#update'
 
-  # # delete a restaurant
-  # delete 'restaurants/:id', to: 'restaurants#destroy'
-
-  # # resources :restaurants
-  # # resources :restaurants, only: [:index]
-  # # resources :restaurants, except: [:index, :edit, :update]
 end

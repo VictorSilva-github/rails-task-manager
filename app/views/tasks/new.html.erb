@@ -1,0 +1,22 @@
+<%# CREATING A NEW TASK %>
+<div class="main">
+<h1>FORM FOR FILL IN</h1>
+<br>
+
+  <%= form_with model: @new_task do |ntask| %>
+     <%= ntask.label :title %>
+    <%= ntask.text_field :title %>
+
+    <%= ntask.label :details %>
+    <%= ntask.text_field :details %>
+
+    <%= ntask.label :completed %>
+    <%= ntask.check_box :completed %>
+
+    <%= ntask.submit %>
+  <% end %>
+
+<%# <%= render 'form', New Task: @new_task %>
+<br>
+<p><%= link_to 'Back To Tasks Main Page', tasks_path, class:"btn btn-primary pt-10" %> <i class="fa-solid fa-house-crack"></i></p>
+</div>

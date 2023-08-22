@@ -1,0 +1,19 @@
+<h1>Update the restaurant</h1>
+<%# render 'form', restaurant: @restaurant %>
+
+ <%= form_with model: @task do |ntask| %>
+    <%= ntask.label :title %>
+    <%= ntask.text_field :title %>
+
+    <%= ntask.label :details %>
+    <%= ntask.text_field :details %>
+
+    <%= ntask.label :completed %>
+    <%= ntask.check_box :completed %>
+
+    <%= ntask.submit %>
+
+<% end %>
+<br>
+
+<p><%= link_to 'BACK to TASKS', tasks_path %></p>
